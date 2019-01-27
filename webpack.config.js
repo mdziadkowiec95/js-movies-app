@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const devMode = process.env.NODE_ENV !== 'production';
 
 const poly = require('@babel/polyfill');
@@ -26,7 +27,15 @@ module.exports = {
       filename: 'css/style.css'
       // publicPath: './dist/css/'
       // chunkFilename: "[id].css"
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: 'src/img/**/*',
+        to: 'img',
+        test: /\.(png|jpg|gif|svg)$/,
+        flatten: true
+      }
+    ])
   ],
   module: {
     rules: [
@@ -42,10 +51,7 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              // publicPath: 'dist/css/'
-            }
+            loader: MiniCssExtractPlugin.loader
           },
           'css-loader',
           'sass-loader'
