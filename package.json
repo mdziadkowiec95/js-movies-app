@@ -1,0 +1,19 @@
+{
+  "name": "js-movies-app",
+  "version": "1.0.0",
+  "description": "My JS App using Movies API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdziadkowiec95/js-movies-app.git"
+  },
+  "author": "M. Dziadkowiec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdziadkowiec95/js-movies-app/issues"
+  },
+  "homepage": "https://github.com/mdziadkowiec95/js-movies-app#readme"
+}
