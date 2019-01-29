@@ -27,6 +27,7 @@ window.state = state;
 
 const controlSearch = async (page = 1) => {
   const query = searchView.getInput();
+  // debugger;
 
   if (query.title !== '') {
     console.log('ok');
@@ -40,7 +41,11 @@ const controlSearch = async (page = 1) => {
 
       clearLoader();
 
-      searchView.renderResults(state.search.result);
+      searchView.renderResults(
+        state.search.result,
+        state.search.query.page,
+        state.search.total
+      );
     } catch (error) {
       alert(error);
       clearLoader();
@@ -57,4 +62,14 @@ const controlSearch = async (page = 1) => {
 elements.searchForm.addEventListener('submit', e => {
   e.preventDefault();
   controlSearch();
+});
+
+elements.pagination.addEventListener('click', e => {
+  if (!isNaN(state.search.query.page)) {
+    if (e.target.matches('.pagination__btn--next')) {
+      controlSearch(state.search.query.page + 1);
+    } else if (e.target.matches('.pagination__btn--prev')) {
+      controlSearch(state.search.query.page - 1);
+    }
+  }
 });

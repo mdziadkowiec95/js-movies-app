@@ -440,14 +440,18 @@ a:link {
 
 .main-wrapper {
   display: flex;
+  position: relative;
+  height: 85vh;
   box-shadow: 0 0 10px #a2a2a2; }
 
 .btn {
   outline: 0;
   background-color: #ffc200;
   border: 2px solid;
-  padding: 0.4rem 0.7rem; }
+  padding: 0.4rem 0.7rem;
+  cursor: pointer; }
   .btn--primary {
+    box-shadow: 0 0 5px #888888;
     border-color: #ffc200;
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out; }
     .btn--primary:hover {
@@ -461,9 +465,50 @@ a:link {
       background-color: #222222;
       color: #ffffff; }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem; }
+  .loader__dot {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 0 0.13em;
+    background-color: #888888;
+    border-radius: 50%;
+    animation: loader-fading 1.6s linear infinite;
+    animation-fill-mode: both; }
+    .loader__dot:nth-child(2) {
+      animation-delay: 0.4s; }
+    .loader__dot:nth-child(3) {
+      animation-delay: 0.8s; }
+    .loader__dot:nth-child(4) {
+      animation-delay: 1.2s; }
+
+@keyframes loader-fading {
+  0% {
+    background-color: #888888;
+    transform: scale(1); }
+  50% {
+    background-color: #ffc200;
+    transform: scale(1.2); }
+  100% {
+    background-color: #888888;
+    transform: scale(1); } }
+
 .nav {
   padding: 1rem;
   background-color: #222222; }
+
+.pagination {
+  position: absolute;
+  bottom: 0; }
+  .pagination__btn {
+    box-shadow: 0 0 5px #888888; }
+    .pagination__btn.disabled {
+      pointer-events: none;
+      background-color: #ffffff;
+      border-color: #ffffff; }
 
 .search {
   display: flex;
@@ -471,16 +516,21 @@ a:link {
   margin: 0; }
   .search__field-group {
     margin: 0 0.3em; }
-  .search__years-field {
-    height: 48px; }
   .search__text-field {
-    padding: 0.5em; }
+    padding: 0.5em;
+    border: 2px solid #222222;
+    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out; }
+    .search__text-field:focus {
+      outline: 0;
+      border-color: #ffc200; }
   .search__button {
     padding: 0.5rem 0.7rem; }
 
 .results {
   flex: 1 1 20%;
-  border-right: 1px solid #eee; }
+  border-right: 1px solid #eee;
+  overflow-y: scroll;
+  position: relative; }
   .results__list {
     list-style: none;
     padding-left: 0; }
@@ -493,6 +543,7 @@ a:link {
     .results__link:hover {
       background-color: #fff9e6; }
   .results__image-box {
+    flex: 0 0 auto;
     max-width: 70px;
     margin-right: 0.7em; }
   .results__title {
@@ -503,5 +554,6 @@ a:link {
   flex: 1 1 60%; }
 
 .sidebar {
+  display: none;
   flex: 1 1 20%; }
 

@@ -33,6 +33,46 @@ const renderItem = movie => {
   elements.resultsList.insertAdjacentHTML('beforeend', markup);
 };
 
-export const renderResults = movies => {
+const makeButton = (type, state) => `
+      <button class="pagination__btn pagination__btn--${type} btn btn--primary${
+  state === 'disabled' ? ' disabled' : ''
+}">${type === 'prev' ? '&larr;' : '&rarr;'}</button>
+  `;
+
+const clearPagination = () => {
+  elements.pagination.innerHTML = '';
+};
+
+const renderPagination = (page, total) => {
+  // debugger;
+  const pages = Math.ceil(parseFloat(total) / 10); // available pages for current search
+
+  console.log(pages);
+
+  let button;
+
+  if (page === 1) {
+    button = `
+      ${makeButton('prev', 'disabled')}
+      ${pages > 1 ? makeButton('next') : makeButton('next', 'disabled')}
+    `;
+  } else if (page < pages) {
+    button = `
+      ${makeButton('prev')}
+      ${makeButton('next')}
+    `;
+  } else {
+    button = `
+    ${makeButton('prev')}
+    ${makeButton('next', 'disabled')}
+  `;
+  }
+
+  elements.pagination.insertAdjacentHTML('afterbegin', button);
+};
+
+export const renderResults = (movies, page, total) => {
   movies.forEach(el => renderItem(el));
+  clearPagination();
+  renderPagination(page, total);
 };

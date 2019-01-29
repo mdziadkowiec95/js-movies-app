@@ -1,0 +1,14 @@
+.pagination {
+  position: absolute;
+  bottom: 0;
+
+  &__btn {
+    box-shadow: 0 0 5px lighten(map-get($colors, dark), 40%);
+
+    &.disabled {
+      pointer-events: none;
+      background-color: map-get($colors, light);
+      border-color: map-get($colors, light);
+    }
+  }
+}

@@ -22,5 +22,7 @@ export default class Search {
       `http://www.omdbapi.com/?apikey=${APIkey}&${request}&page=${page}`
     );
     this.result = results.data.Search;
+    this.total = results.data.totalResults;
+    this.query.page = page;
   }
 }

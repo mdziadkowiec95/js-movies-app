@@ -13,7 +13,13 @@
 @import './components/buttons';
 @import './components/loader';
 @import './components/nav';
+@import './components/pagination';
 @import './components/search';
 @import './components/results';
 @import './components/preview';
 @import './components/sidebar';
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-image: url('../../img/main-bg.jpeg');
+}

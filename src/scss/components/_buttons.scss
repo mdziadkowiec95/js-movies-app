@@ -6,6 +6,7 @@
   cursor: pointer;
 
   &--primary {
+    box-shadow: 0 0 5px lighten(map-get($colors, dark), 40%);
     border-color: map-get($colors, primary);
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 

@@ -1,14 +1,19 @@
 export const elements = {
   searchForm: document.querySelector('.search'),
-  searchTextField: document.querySelector('.search__text-field'),
-  searchYearsSelect: document.querySelector('.search__years-field'),
+  searchTextField: document.querySelector('.search__text-field--title'),
+  searchYearsSelect: document.querySelector('.search__text-field--years'),
   results: document.querySelector('.results'),
-  resultsList: document.querySelector('.results__list')
+  resultsList: document.querySelector('.results__list'),
+  pagination: document.querySelector('.pagination')
+};
+
+const elementStrings = {
+  loader: 'loader'
 };
 
 export const renderLoader = () => {
   const loader = `
-      <div class="loader">
+      <div class="${elementStrings.loader}">
         <span class="loader__dot"></span>
         <span class="loader__dot"></span>
         <span class="loader__dot"></span>
@@ -20,5 +25,6 @@ export const renderLoader = () => {
 };
 
 export const clearLoader = () => {
-  elements.results.removeChild(document.querySelector('.loader'));
+  const loader = document.querySelector(`.${elementStrings.loader}`);
+  if (loader) elements.results.removeChild(loader);
 };
