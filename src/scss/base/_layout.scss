@@ -1,0 +1,22 @@
+.container {
+  margin: 0 auto;
+  padding: 0 1em;
+
+  @include make-breakpoint(sm) {
+    max-width: 740px;
+  }
+
+  @include make-breakpoint(md) {
+    max-width: 960px;
+  }
+
+  @include make-breakpoint(lg) {
+    max-width: 1392px;
+  }
+}
+
+.main-wrapper {
+  display: flex;
+  height: 85vh;
+  box-shadow: 0 0 10px lighten(map-get($colors, dark), 50%);
+}

@@ -1,0 +1,28 @@
+.btn {
+  outline: 0;
+  background-color: map-get($colors, primary);
+  border: 2px solid;
+  padding: 0.4rem 0.7rem;
+  cursor: pointer;
+
+  &--primary {
+    border-color: map-get($colors, primary);
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: lighten(map-get($colors, primary), 20%);
+      border-color: lighten(map-get($colors, primary), 20%);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: map-get($colors, dark);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: map-get($colors, dark);
+      color: map-get($colors, light);
+    }
+  }
+}

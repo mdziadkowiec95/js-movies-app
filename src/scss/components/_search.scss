@@ -1,0 +1,31 @@
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+
+  &__field-group {
+    margin: 0 0.3em;
+  }
+  // &__years-field {
+  //   height: 48px;
+  // }
+
+  &__text-field {
+    padding: 0.5em;
+    border: 2px solid map-get($colors, dark);
+    transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
+
+    &--years {
+    }
+
+    &:focus {
+      outline: 0;
+      border-color: map-get($colors, primary);
+      // transform: scale(1.01);
+    }
+  }
+
+  &__button {
+    padding: 0.5rem 0.7rem;
+  }
+}

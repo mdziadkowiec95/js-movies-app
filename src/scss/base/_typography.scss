@@ -1,3 +1,28 @@
-h1 {
-  color: pink !important;
+html {
+  font-size: 16px;
+
+  @include make-breakpoint(md) {
+    font-size: 18px;
+  }
+
+  @include make-breakpoint(lg) {
+    font-size: 20px;
+  }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  font-size: 0.75rem;
+}
+
+a:link {
+  text-decoration: none;
+  color: inherit;
 }
