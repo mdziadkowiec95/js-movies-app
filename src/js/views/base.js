@@ -12,6 +12,16 @@ const elementStrings = {
   loader: 'loader'
 };
 
+export const toggleViews = view => {
+  if (view === 'search') {
+    elements.preview.classList.remove('js-active');
+    elements.results.classList.add('js-active');
+  } else {
+    elements.preview.classList.add('js-active');
+    elements.results.classList.remove('js-active');
+  }
+};
+
 export const renderLoader = parentEl => {
   const loader = `
       <div class="${elementStrings.loader}">

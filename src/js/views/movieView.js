@@ -21,6 +21,7 @@ export const renderMovie = movieData => {
   };
 
   const markup = `
+  <button class="preview__btn preview__btn--back btn btn--primary">Back to Search Results</button>
   <div class="preview__top"> 
   <div class="preview__poster">
       <button class="preview__btn preview__btn--like btn btn--primary">&#x2764;

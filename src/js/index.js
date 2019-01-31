@@ -9,7 +9,7 @@
 // dom.watch();
 
 import './experiments';
-import { elements, renderLoader, clearLoader } from './views/base';
+import { elements, toggleViews, renderLoader, clearLoader } from './views/base';
 import Search from './models/Search';
 import Movie from './models/Movie';
 import * as searchView from './views/searchView';
@@ -92,6 +92,7 @@ const controlMovie = async () => {
     state.movie = new Movie(id);
 
     // prepare UI
+    toggleViews('preview');
     movieView.clearMovie();
     renderLoader(elements.preview);
 
@@ -112,3 +113,9 @@ const controlMovie = async () => {
 
 // Set event listeners for handling controling single movie preview
 ['hashchange'].forEach(event => window.addEventListener(event, controlMovie));
+
+elements.preview.addEventListener('click', e => {
+  if (e.target.matches('.preview__btn--back')) {
+    toggleViews('search');
+  }
+});
