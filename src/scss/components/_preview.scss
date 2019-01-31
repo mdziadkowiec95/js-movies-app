@@ -1,3 +1,104 @@
 .preview {
   flex: 1 1 60%;
+  padding: 0.5rem;
+  overflow-y: scroll;
+
+  &__top {
+    display: flex;
+    padding-bottom: 1em;
+    margin-top: 1em;
+    border-bottom: 1px solid map-get($colors, primary);
+  }
+
+  &__poster {
+    position: relative;
+    width: 230px;
+    // box-shadow: 0 0 5px lighten(map-get($colors, dark), 40%);
+  }
+
+  &__poster-img {
+  }
+
+  &__main {
+    flex: 1 1 0%;
+    padding: 0 1em;
+  }
+
+  &__title {
+    color: map-get($colors, dark--lighten);
+    font-weight: 400;
+  }
+
+  &__year {
+    margin-left: 0.4em;
+    font-size: 0.6em;
+    font-weight: 300;
+  }
+
+  &__rating {
+    padding: 0.5em 0.7em;
+    background-color: map-get($colors, dark);
+    color: map-get($colors, light);
+    // font-size: 1.5em;
+  }
+
+  &__rating-star {
+    color: map-get($colors, primary);
+    font-size: 1.5em;
+  }
+
+  &__rating-rate {
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+
+  &__rating-votes {
+    font-size: 0.8em;
+    font-weight: 300;
+    margin-left: 0.5em;
+  }
+
+  &__runtime {
+    display: inline-block;
+    padding: 0.3em;
+    border: 1px solid map-get($colors, dark--lighten);
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
+
+    &--like {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: map-get($colors, light);
+      padding: 0.3em;
+
+      &.active {
+        color: red;
+      }
+    }
+  }
+
+  &__plot {
+    font-size: 0.9em;
+    font-weight: 300;
+  }
+  &__bottom {
+  }
+
+  &__heading {
+    font-weight: 400;
+  }
+
+  &__label {
+    color: map-get($colors, gray);
+  }
+
+  &__info {
+    margin-left: 0.4em;
+    color: map-get($colors, dark--lighten);
+  }
 }

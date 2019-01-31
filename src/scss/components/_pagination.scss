@@ -11,4 +11,12 @@
       border-color: map-get($colors, light);
     }
   }
+
+  &__pages {
+    padding: 0.4em 0.5em;
+    background-color: rgba(map-get($colors, dark), 0.6);
+    color: map-get($colors, light);
+    border-radius: 1em;
+    font-size: 0.8rem;
+  }
 }

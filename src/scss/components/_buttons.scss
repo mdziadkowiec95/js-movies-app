@@ -3,6 +3,7 @@
   background-color: map-get($colors, primary);
   border: 2px solid;
   padding: 0.4rem 0.7rem;
+  text-align: center;
   cursor: pointer;
 
   &--primary {

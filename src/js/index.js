@@ -8,10 +8,12 @@
 // // continue doing this as the DOM changes.
 // dom.watch();
 
-// import './views/base';
+import './experiments';
 import { elements, renderLoader, clearLoader } from './views/base';
 import Search from './models/Search';
+import Movie from './models/Movie';
 import * as searchView from './views/searchView';
+import * as movieView from './views/movieView';
 const styles = require('../scss/app.scss');
 
 const state = {};
@@ -25,21 +27,29 @@ window.state = state;
  *
  */
 
-const controlSearch = async (page = 1) => {
-  const query = searchView.getInput();
+const controlSearch = async (page = 1, mode = 'search') => {
+  let query;
+
+  if (mode === 'search') {
+    query = searchView.getInput();
+  } else if (mode === 'paginator') {
+    query = state.search.query;
+  }
+
   // debugger;
 
   if (query.title !== '') {
     console.log('ok');
     state.search = new Search(query);
 
+    searchView.clearInputs();
     searchView.clearResults();
-    renderLoader();
+    renderLoader(elements.results);
 
     try {
       await state.search.getResults(page);
 
-      clearLoader();
+      clearLoader(elements.results);
 
       searchView.renderResults(
         state.search.result,
@@ -47,8 +57,8 @@ const controlSearch = async (page = 1) => {
         state.search.total
       );
     } catch (error) {
-      alert(error);
-      clearLoader();
+      alert(`There was a problem with searching movies ---> ${error}`);
+      clearLoader(elements.results);
     }
   } else {
     // show alert
@@ -67,9 +77,38 @@ elements.searchForm.addEventListener('submit', e => {
 elements.pagination.addEventListener('click', e => {
   if (!isNaN(state.search.query.page)) {
     if (e.target.matches('.pagination__btn--next')) {
-      controlSearch(state.search.query.page + 1);
+      controlSearch(state.search.query.page + 1, 'paginator');
     } else if (e.target.matches('.pagination__btn--prev')) {
-      controlSearch(state.search.query.page - 1);
+      controlSearch(state.search.query.page - 1, 'paginator');
     }
   }
 });
+
+const controlMovie = async () => {
+  const id = window.location.hash.substr(1);
+
+  if (id) {
+    //create new Movie instance
+    state.movie = new Movie(id);
+
+    // prepare UI
+    movieView.clearMovie();
+    renderLoader(elements.preview);
+
+    try {
+      // get movie data (by id)
+      await state.movie.getMovie();
+
+      console.log(state.movie);
+
+      clearLoader(elements.preview);
+
+      movieView.renderMovie(state.movie);
+    } catch (error) {
+      alert(`There was a problem with getting single movie ---> ${error}`);
+    }
+  }
+};
+
+// Set event listeners for handling controling single movie preview
+['hashchange'].forEach(event => window.addEventListener(event, controlMovie));

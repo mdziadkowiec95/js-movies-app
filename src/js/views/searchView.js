@@ -3,12 +3,21 @@ import { elements } from './base';
 export const getInput = () => {
   return {
     title: elements.searchTextField.value,
-    year: elements.searchYearsSelect.value
+    year:
+      parseFloat(elements.searchYearsSelect.value) > 1900
+        ? elements.searchYearsSelect.value
+        : ''
   };
+};
+
+export const clearInputs = () => {
+  elements.searchTextField.value = '';
+  elements.searchYearsSelect.value = '';
 };
 
 export const clearResults = () => {
   elements.resultsList.innerHTML = '';
+  clearPagination();
 };
 
 const renderItem = movie => {
@@ -47,7 +56,7 @@ const renderPagination = (page, total) => {
   // debugger;
   const pages = Math.ceil(parseFloat(total) / 10); // available pages for current search
 
-  console.log(pages);
+  // console.log(pages);
 
   let button;
 
@@ -68,7 +77,12 @@ const renderPagination = (page, total) => {
   `;
   }
 
-  elements.pagination.insertAdjacentHTML('afterbegin', button);
+  const pagination = `
+    ${button}
+    <span class="pagination__pages">${page} of ${pages}</span>
+  `;
+
+  elements.pagination.insertAdjacentHTML('afterbegin', pagination);
 };
 
 export const renderResults = (movies, page, total) => {

@@ -14,9 +14,10 @@ export default class Search {
   }
 
   async getResults(page) {
-    const request = this.query.year
-      ? `s=${this.query.title}&y=${this.query.year}`
-      : `s=${this.query.title}`;
+    const request =
+      this.query.year > 1900
+        ? `s=${this.query.title}&y=${this.query.year}`
+        : `s=${this.query.title}`;
 
     const results = await axios(
       `http://www.omdbapi.com/?apikey=${APIkey}&${request}&page=${page}`
