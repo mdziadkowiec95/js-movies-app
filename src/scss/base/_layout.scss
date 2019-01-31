@@ -20,9 +20,15 @@
   height: 85vh;
   background-color: rgba(map-get($colors, light), 0.9);
   box-shadow: 0 0 20px lighten(map-get($colors, dark), 50%);
+
   overflow-x: hidden;
 
   @include make-breakpoint(lg) {
     display: flex;
+    overflow-y: hidden;
   }
+
+  // &.dupa {
+  //   overflow-y: auto;
+  // }
 }

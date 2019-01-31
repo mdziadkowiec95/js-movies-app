@@ -29,6 +29,7 @@ window.state = state;
 
 const controlSearch = async (page = 1, mode = 'search') => {
   let query;
+  // debugger;
 
   if (mode === 'search') {
     query = searchView.getInput();
@@ -44,6 +45,7 @@ const controlSearch = async (page = 1, mode = 'search') => {
 
     searchView.clearInputs();
     searchView.clearResults();
+    toggleViews('search');
     renderLoader(elements.results);
 
     try {
@@ -76,9 +78,9 @@ elements.searchForm.addEventListener('submit', e => {
 
 elements.pagination.addEventListener('click', e => {
   if (!isNaN(state.search.query.page)) {
-    if (e.target.matches('.pagination__btn--next')) {
+    if (e.target.matches('.pagination__btn--next:not(.disabled)')) {
       controlSearch(state.search.query.page + 1, 'paginator');
-    } else if (e.target.matches('.pagination__btn--prev')) {
+    } else if (e.target.matches('.pagination__btn--prev:not(.disabled)')) {
       controlSearch(state.search.query.page - 1, 'paginator');
     }
   }
@@ -118,4 +120,8 @@ elements.preview.addEventListener('click', e => {
   if (e.target.matches('.preview__btn--back')) {
     toggleViews('search');
   }
+});
+
+elements.searchForm.addEventListener('focus', e => {
+  alert(e);
 });

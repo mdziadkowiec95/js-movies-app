@@ -1,22 +1,68 @@
 .pagination {
-  position: absolute;
+  display: flex;
+  // position: relative;
+  position: fixed;
+  left: 50%;
   bottom: 0;
+  max-width: calc(100% - 17px);
+  transform: translateX(-50%);
+  // bottom: 0;
+  // padding: 0.3em;
+
+  background-color: rgba(map-get($colors, dark), 0);
+
+  box-shadow: 0 -2px 5px lighten(map-get($colors, dark), 40%);
+
+  z-index: 1000;
+
+  @include make-breakpoint(lg) {
+    position: absolute;
+    left: auto;
+    transform: none;
+  }
 
   &__btn {
-    box-shadow: 0 0 5px lighten(map-get($colors, dark), 40%);
+    // display: block;
+    padding: 0.3em 1.5em;
+    box-shadow: 0 0px 2px lighten(map-get($colors, dark), 40%);
 
     &.disabled {
-      pointer-events: none;
+      // pointer-events: none;
       background-color: map-get($colors, light);
       border-color: map-get($colors, light);
+      cursor: no-drop;
     }
   }
 
   &__pages {
+    position: absolute;
+    top: -32px;
+    // flex: 1 1 30%;
     padding: 0.4em 0.5em;
-    background-color: rgba(map-get($colors, dark), 0.6);
+    background-color: rgba(map-get($colors, dark), 1);
     color: map-get($colors, light);
-    border-radius: 1em;
+    box-shadow: 0 0px 2px lighten(map-get($colors, dark), 40%);
+    // border-radius: 1em;
     font-size: 0.8rem;
+  }
+}
+
+.searching-mode {
+  .pagination {
+    display: block;
+
+    @include make-breakpoint(lg) {
+      display: block;
+    }
+  }
+}
+
+.preview-mode {
+  .pagination {
+    display: none;
+
+    @include make-breakpoint(lg) {
+      display: block;
+    }
   }
 }

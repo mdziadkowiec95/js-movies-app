@@ -1,4 +1,5 @@
 export const elements = {
+  mainWrapper: document.querySelector('.main-wrapper'),
   searchForm: document.querySelector('.search'),
   searchTextField: document.querySelector('.search__text-field--title'),
   searchYearsSelect: document.querySelector('.search__text-field--years'),
@@ -14,9 +15,13 @@ const elementStrings = {
 
 export const toggleViews = view => {
   if (view === 'search') {
+    elements.mainWrapper.classList.remove('preview-mode');
+    elements.mainWrapper.classList.add('searching-mode');
     elements.preview.classList.remove('js-active');
     elements.results.classList.add('js-active');
   } else {
+    elements.mainWrapper.classList.remove('searching-mode');
+    elements.mainWrapper.classList.add('preview-mode');
     elements.preview.classList.add('js-active');
     elements.results.classList.remove('js-active');
   }

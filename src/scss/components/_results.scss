@@ -1,8 +1,9 @@
 .results {
   // flex: 1 1 20%;
+  // background-color: transparent;
   border-right: 1px solid #eee;
-  overflow-y: scroll;
-  position: relative;
+
+  // position: relative;
 
   position: absolute;
   top: 0;
@@ -10,22 +11,35 @@
   width: 100%;
   height: 100%;
   flex: 1 1 100%;
+  will-change: transform;
   transform: translateX(-100%);
-
+  transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
+  visibility: hidden;
   @include make-breakpoint(lg) {
     flex: 1 1 20%;
+    visibility: visible;
     position: static;
     transform: none;
     width: auto;
   }
 
   &.js-active {
+    visibility: visible;
+    z-index: 5;
     transform: translateX(0);
 
     @include make-breakpoint(lg) {
       // position: static;
       // transform: none;
       // width: auto;
+    }
+  }
+
+  &__inner {
+    height: calc(85vh - 50px);
+
+    @include make-breakpoint(lg) {
+      overflow-y: scroll;
     }
   }
 
