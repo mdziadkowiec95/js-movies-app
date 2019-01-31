@@ -1,7 +1,7 @@
 .preview {
   //
   padding: 0.5rem;
-  overflow-y: scroll;
+
   position: absolute;
   top: 0;
   left: 0;
@@ -11,6 +11,7 @@
   transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
 
   @include make-breakpoint(lg) {
+    overflow-y: scroll;
     position: static;
     transform: none;
     width: auto;
