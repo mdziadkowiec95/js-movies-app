@@ -17,15 +17,12 @@
   visibility: hidden;
   @include make-breakpoint(lg) {
     flex: 1 1 20%;
-    visibility: visible;
     position: static;
     transform: none;
     width: auto;
   }
 
   &.js-active {
-    visibility: visible;
-    z-index: 5;
     transform: translateX(0);
 
     @include make-breakpoint(lg) {
