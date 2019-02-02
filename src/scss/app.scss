@@ -5,6 +5,7 @@
 
 @import './utils/variables';
 @import './utils/mixins';
+@import './utils/animations';
 
 @import './base/typography';
 
@@ -18,4 +19,5 @@
 @import './components/results';
 @import './components/preview';
 @import './components/sidebar';
+@import './components/favorites';
 

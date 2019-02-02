@@ -8,13 +8,21 @@
 // // continue doing this as the DOM changes.
 // dom.watch();
 
+// Module imports below
 import './experiments';
 import { elements, toggleViews, renderLoader, clearLoader } from './views/base';
 import Search from './models/Search';
 import Movie from './models/Movie';
+import Favorites from './models/Favorites';
 import * as searchView from './views/searchView';
 import * as movieView from './views/movieView';
+import * as favoritesView from './views/favoritesView';
+
 const styles = require('../scss/app.scss');
+
+
+
+// Application controller below
 
 const state = {};
 
@@ -107,8 +115,9 @@ const controlMovie = async () => {
       clearLoader(elements.preview);
 
       movieView.renderMovie(state.movie);
+      searchView.makeMovieSelected(id);
     } catch (error) {
-      alert(`There was a problem with getting single movie ---> ${error}`);
+      console.log(`${error}`);
     }
   }
 };
@@ -116,12 +125,41 @@ const controlMovie = async () => {
 // Set event listeners for handling controling single movie preview
 ['hashchange'].forEach(event => window.addEventListener(event, controlMovie));
 
+
+const controlFavorites = () => {
+
+  if (!state.favorites) state.favorites = new Favorites();
+
+  const curID = state.movie.id;
+
+  if (!state.favorites.isFav(curID)) {
+    // add item to Favorites instance in state
+    const newItem = state.favorites.addItem(curID, state.movie.title, state.movie.poster);
+
+    favoritesView.toggleFavBtn(state.favorites.isFav(curID));
+    // add item to the UI
+    favoritesView.addItem(newItem);
+
+  } else {
+    // debugger;
+    state.favorites.removeItem(curID);
+
+    favoritesView.toggleFavBtn(state.favorites.isFav(curID));
+
+    favoritesView.removeItem(curID);
+  }
+
+  console.log(state.favorites);
+
+
+};
+
 elements.preview.addEventListener('click', e => {
   if (e.target.matches('.preview__btn--back')) {
     toggleViews('search');
+  } else if (e.target.matches('.preview__btn--like')) {
+    controlFavorites();
   }
 });
 
-elements.searchForm.addEventListener('focus', e => {
-  alert(e);
-});
+document.querySelector('.favorites__btn').addEventListener('click', favoritesView.toggleFavList);

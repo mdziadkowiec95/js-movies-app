@@ -1,181 +1,223 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Movies JS App</title>
-  </head>
-  <body>
-      <header class="header">
-          <nav class="nav">
-            <div class="container">
-                <i class="fas fa-film"></i>
-                 
-              <form class="search">
-                <div class="search__field-group">
-                    <input type="number" placeholder="Enter specific year..." class="search__text-field search__text-field--years">
-                </div> 
-                <div class="search__field-group">
-                    <input type="text" placeholder="Search by title..." class="search__text-field search__text-field--title">
-                </div>
-                <button type="submit" class="search__button btn btn--primary">Search</button>
-              </form>
-            </div>
-          </nav>
-      </header> 
-      <main>
-        <div class="container">
-          <div class="main-wrapper">
-            <div class="results js-active">
-              <div class="results__inner"> 
-        
 
-              
-                  <ul class="results__list">
-    
-                    <li class="results__item">
-                      <a href="#tt0169547" class="results__link">
-                        <div class="results__image-box">
-                          <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="American Beauty">
-                        </div>
-                        <div class="results__info"> 
-                          <h3 class="results__title">American Beauty</h3>
-                          <p class="results__type">Type: movie</p>
-                          <p class="results__year">Release date: <strong>1998</strong></p>
-                        </div>
-                      </a>
-                    </li>
-                    <li class="results__item">
-                        <a href="#tt0169547" class="results__link">
-                          <div class="results__image-box">
-                            <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="American Beauty">
-                          </div>
-                          <div class="results__info">
-                            <h3 class="results__title">American Beauty  asfasf</h3>
-                            <p class="results__type">Type: movie</p>
-                            <p class="results__year">Release date: <strong>1998</strong></p>
-                          </div>
-                        </a>
-                      </li>
-    
-                    <li class="results__item">
-                        <a href="#tt0169547" class="results__link">
-                          <div class="results__image-box">
-                            <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="American Beauty">
-                          </div>
-                          <div class="results__info">
-                            <h3 class="results__title">American Beauty</h3>
-                            <p class="results__type">Type: movie</p>
-                            <p class="results__year">Release date: <strong>1998</strong></p>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="results__item">
-                          <a href="#tt0169547" class="results__link">
-                            <div class="results__image-box">
-                              <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="American Beauty">
-                            </div>
-                            <div class="results__info">
-                              <h3 class="results__title">American Beauty  asfasf</h3>
-                              <p class="results__type">Type: movie</p>
-                              <p class="results__year">Release date: <strong>1998</strong></p>
-                            </div>
-                          </a>
-                        </li>
-    
-                    <li class="results__item">
-                        <a href="#tt0169547" class="results__link">
-                          <div class="results__image-box">
-                            <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="American Beauty">
-                          </div>
-                          <div class="results__info">
-                            <h3 class="results__title">American Beauty</h3>
-                            <p class="results__type">Type: movie</p>
-                            <p class="results__year">Release date: <strong>1998</strong></p>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="results__item">
-                          <a href="#tt0169547" class="results__link">
-                            <div class="results__image-box">
-                              <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="American Beauty">
-                            </div>
-                            <div class="results__info">
-                              <h3 class="results__title">American Beauty  asfasf</h3>
-                              <p class="results__type">Type: movie</p>
-                              <p class="results__year">Release date: <strong>1998</strong></p>
-                            </div>
-                          </a>
-                        </li>
-    
-                  </ul>
-            
-                 
-                </div>
-               
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Movies JS App</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="container">
+        <i class="fas fa-film"></i>
+
+        <form class="search">
+          <div class="search__field-group">
+            <input type="number" placeholder="Enter specific year..." class="search__text-field search__text-field--years">
           </div>
-           
-            <div class="preview">
-                <button class="preview__btn preview__btn--back btn btn--primary">Back to Search Results</button>
-                <div class="preview__top">
-                  <div class="preview__poster"> 
-                      <button href="http://www.thesocialnetwork-movie.com/" class="preview__btn preview__btn--like btn btn--primary">&#x2764;
-                      </button>
-                    <img src="https://m.media-amazon.com/images/M/MV5BOGUyZDUxZjEtMmIzMC00MzlmLTg4MGItZWJmMzBhZjE0Mjc1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg" alt="The Social Network" class="preview__poster-img">
+          <div class="search__field-group">
+            <input type="text" placeholder="Search by title..." class="search__text-field search__text-field--title">
+          </div>
+          <button type="submit" class="search__button btn btn--primary">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="main-wrapper">
+        <div class="results js-active">
+          <div class="results__inner">
+
+            <ul class="results__list">
+
+              <li class="results__item">
+                <a href="#tt0169547" class="results__link">
+                  <div class="results__image-box">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                      alt="American Beauty">
                   </div>
-                  <div class="preview__main">
-                    <h2 class="preview__title">The Social Network<span class="preview__year">(2010)</span></h2>
-                    <div class="preview__rating">
-                        <span class="preview__rating-star">&#x2605;</span>
-                        <span class="preview__rating-rate">7.7</span>
-                        <span class="preview__rating-votes">(559,522 votes)</span>
-                      </div>
-                    <p class="preview__runtime">120 min</p>
-                   
-                    <a href="http://www.thesocialnetwork-movie.com/" class="preview__btn preview__btn--visit btn btn--primary">Visit website</a>
-                    
-                    <p class="preview__plot">Harvard student Mark Zuckerberg creates the social networking site that would become known as Facebook, but is later sued by two brothers who claimed he stole their idea, and the co-founder who was later squeezed out of the business.</p>
+                  <div class="results__info">
+                    <h3 class="results__title">American Beauty</h3>
+                    <p class="results__type">Type: movie</p>
+                    <p class="results__year">Release date: <strong>1998</strong></p>
                   </div>
-                </div>
-                <div class="preview__bottom">
-                    <h3 class="preview__heading preview__heading--details">More information:</h3>
-                    <p class="preview__label">Director:<span class="preview__info">David Fincher</span></p>
-                    <p class="preview__label">Writer:<span class="preview__info">Aaron Sorkin (screenplay), Ben Mezrich (book)</span></p>
-                    <p class="preview__label">Type:<span class="preview__info">movie</span></p>
-                    <p class="preview__label">Genre:<span class="preview__info">Biography, Drama</span></p>
-                    <p class="preview__label">Main cast:<span class="preview__info">Jesse Eisenberg, Rooney Mara, Bryan Barter, Dustin Fitzsimons</span></p>
-                    <p class="preview__label">Production:<span class="preview__info">Columbia Pictures (USA)</span></p>
-                    <p class="preview__label">Release date:<span class="preview__info">01 Oct 2010</span></p>
-                    <p class="preview__label">Box office:<span class="preview__info">$96,400,000</span></p>
-                    <p class="preview__label">Awards:<span class="preview__info">Won 3 Oscars. Another 165 wins & 168 nominations.</span></p>
+                </a>
+              </li>
+              <li class="results__item">
+                <a href="#tt0169547" class="results__link">
+                  <div class="results__image-box">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                      alt="American Beauty">
+                  </div>
+                  <div class="results__info">
+                    <h3 class="results__title">American Beauty asfasf</h3>
+                    <p class="results__type">Type: movie</p>
+                    <p class="results__year">Release date: <strong>1998</strong></p>
+                  </div>
+                </a>
+              </li>
 
-                </div>
+              <li class="results__item">
+                <a href="#tt0169547" class="results__link">
+                  <div class="results__image-box">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                      alt="American Beauty">
+                  </div>
+                  <div class="results__info">
+                    <h3 class="results__title">American Beauty</h3>
+                    <p class="results__type">Type: movie</p>
+                    <p class="results__year">Release date: <strong>1998</strong></p>
+                  </div>
+                </a>
+              </li>
+              <li class="results__item">
+                <a href="#tt0169547" class="results__link">
+                  <div class="results__image-box">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                      alt="American Beauty">
+                  </div>
+                  <div class="results__info">
+                    <h3 class="results__title">American Beauty asfasf</h3>
+                    <p class="results__type">Type: movie</p>
+                    <p class="results__year">Release date: <strong>1998</strong></p>
+                  </div>
+                </a>
+              </li>
+
+              <li class="results__item">
+                <a href="#tt0169547" class="results__link">
+                  <div class="results__image-box">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                      alt="American Beauty">
+                  </div>
+                  <div class="results__info">
+                    <h3 class="results__title">American Beauty</h3>
+                    <p class="results__type">Type: movie</p>
+                    <p class="results__year">Release date: <strong>1998</strong></p>
+                  </div>
+                </a>
+              </li>
+              <li class="results__item">
+                <a href="#tt0169547" class="results__link">
+                  <div class="results__image-box">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                      alt="American Beauty">
+                  </div>
+                  <div class="results__info">
+                    <h3 class="results__title">American Beauty asfasf</h3>
+                    <p class="results__type">Type: movie</p>
+                    <p class="results__year">Release date: <strong>1998</strong></p>
+                  </div>
+                </a>
+              </li>
+
+            </ul>
 
 
+          </div>
 
+        </div>
 
+        <div class="preview">
+          <button class="preview__btn preview__btn--back btn btn--primary">Back to Search Results</button>
+          <div class="preview__top">
+            <div class="preview__poster">
+              <button href="http://www.thesocialnetwork-movie.com/" class="preview__btn preview__btn--like btn btn--primary">&#x2764;
+              </button>
+              <img src="https://m.media-amazon.com/images/M/MV5BOGUyZDUxZjEtMmIzMC00MzlmLTg4MGItZWJmMzBhZjE0Mjc1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                alt="The Social Network" class="preview__poster-img">
+            </div>
+            <div class="preview__main">
+              <h2 class="preview__title">The Social Network<span class="preview__year">(2010)</span></h2>
+              <div class="preview__rating">
+                <span class="preview__rating-star">&#x2605;</span>
+                <span class="preview__rating-rate">7.7</span>
+                <span class="preview__rating-votes">(559,522 votes)</span>
+              </div>
+              <p class="preview__runtime">120 min</p>
 
+              <a href="http://www.thesocialnetwork-movie.com/" class="preview__btn preview__btn--visit btn btn--primary">Visit
+                website
+              </a>
 
-                <!-- <div class="loader">
+              <p class="preview__plot">Harvard student Mark Zuckerberg creates the social networking site that would become
+                known as Facebook, but is later sued by two brothers who claimed he stole their idea, and the co-founder
+                who was later squeezed out of the business.</p>
+            </div>
+          </div>
+          <div class="preview__bottom">
+            <h3 class="preview__heading preview__heading--details">More information:</h3>
+            <p class="preview__label">Director:<span class="preview__info">David Fincher</span></p>
+            <p class="preview__label">Writer:<span class="preview__info">Aaron Sorkin (screenplay), Ben Mezrich (book)</span></p>
+            <p class="preview__label">Type:<span class="preview__info">movie</span></p>
+            <p class="preview__label">Genre:<span class="preview__info">Biography, Drama</span></p>
+            <p class="preview__label">Main cast:<span class="preview__info">Jesse Eisenberg, Rooney Mara, Bryan Barter, Dustin
+                Fitzsimons
+              </span></p>
+            <p class="preview__label">Production:<span class="preview__info">Columbia Pictures (USA)</span></p>
+            <p class="preview__label">Release date:<span class="preview__info">01 Oct 2010</span></p>
+            <p class="preview__label">Box office:<span class="preview__info">$96,400,000</span></p>
+            <p class="preview__label">Awards:<span class="preview__info">Won 3 Oscars. Another 165 wins & 168 nominations.</span></p>
+
+          </div>
+
+          <!-- <div class="loader">
                     <span class="loader__dot"></span>
                     <span class="loader__dot"></span>
                     <span class="loader__dot"></span>
                     <span class="loader__dot"></span>
                   </div> -->
-            </div>
-            <div class="sidebar">
-
-            </div>
-            <div class="pagination">
-                <button class="pagination__btn pagination__btn--prev  btn btn--primary disabled">&larr;</button>
-                <button class="pagination__btn pagination__btn--next btn btn--primary">&rarr;</button>
-                <span class="pagination__pages">1 / 345</span>
-              </div>
-          </div> 
-          
-          <!-- <img src="img/test-1.jpg" alt="" /> -->
         </div>
-      </main>
+        <div class="sidebar">
+          <div class="sidebar-inner">
+            <div class="favorites">
+              <button class="favorites__btn btn btn--outline"><span>&#x25BC;</span></button>
+              <ul class="favorites__list">
+                <!-- <li class="favorites__list-item">
+                  <a class="favorites__link" href="#1245125">
+                    <div class="favorites__image-box">
+                      <img class="favorites__image" src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                        alt="American Beauty">
+                    </div>
+                    <h3 class="favorites__title">American Beauty</h3>
+                  </a>
+                </li>
+                <li class="favorites__list-item">
+                  <a class="favorites__link" href="#1245125">
+                    <div class="favorites__image-box">
+                      <img class="favorites__image" src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                        alt="American Beauty">
+                    </div>
+                    <h3 class="favorites__title">American Beauty</h3>
+                  </a>
+                </li>
+                <li class="favorites__list-item">
+                  <a class="favorites__link" href="#1245125">
+                    <div class="favorites__image-box">
+                      <img class="favorites__image" src="https://m.media-amazon.com/images/M/MV5BNTBmZWJkNjctNDhiNC00MGE2LWEwOTctZTk5OGVhMWMyNmVhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg"
+                        alt="American Beauty">
+                    </div>
+                    <h3 class="favorites__title">American Beauty</h3>
+                  </a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="pagination">
+          <button class="pagination__btn pagination__btn--prev  btn btn--primary disabled">&larr;</button>
+          <button class="pagination__btn pagination__btn--next btn btn--primary">&rarr;</button>
+          <span class="pagination__pages">1 / 345</span>
+        </div>
+      </div>
+
+      <!-- <img src="img/test-1.jpg" alt="" /> -->
     </div>
-  </body>
+  </main>
+  </div>
+</body>
+
 </html>

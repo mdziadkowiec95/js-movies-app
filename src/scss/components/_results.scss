@@ -48,15 +48,26 @@
   &__item {
   }
 
-  &__link {
+  &__link:link,
+  &__link:visited {
     display: flex;
     text-transform: none;
     border-bottom: 1px solid lighten(map-get($colors, dark), 60%);
     padding: 0.3em 0.5em;
+    color: map-get($colors, dark);
     transition: background-color 0.2s ease-in-out;
+    
 
     &:hover {
-      background-color: lighten(map-get($colors, primary), 45%);
+      background-color: lighten(map-get($colors, primary), 25%);
+    }
+
+    &.active {
+      @include make-breakpoint(lg) {
+        animation: pop-in .3s ease;
+        background-color: lighten(map-get($colors, primary), 25%);
+        box-shadow: 0 0 10px lighten(map-get($colors, dark), 40%);
+      }
     }
   }
 
@@ -68,7 +79,7 @@
 
   &__title {
     margin: 0.2em 0;
-    font-size: 0.9em;
+    font-size: 0.82em;
   }
 
   &__type {

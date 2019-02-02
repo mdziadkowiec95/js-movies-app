@@ -20,6 +20,12 @@ export const clearResults = () => {
   clearPagination();
 };
 
+export const makeMovieSelected = id => {
+  // debugger;
+  Array.from(document.querySelectorAll('.results__link')).forEach(el => el.classList.remove('active'));
+  document.querySelector(`.results__link[href="#${id}"]`).classList.add('active');
+};
+
 const renderItem = movie => {
   const markup = `
     <li class="results__item">

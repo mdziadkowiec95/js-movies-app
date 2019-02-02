@@ -12,7 +12,7 @@ html {
 
 body {
   font-family: 'Lato', sans-serif;
-  background: url('img/main-bg.jpeg') no-repeat center;
+  background: url('../img/main-bg.jpeg') no-repeat center;
 }
 
 img {
@@ -23,7 +23,8 @@ p {
   font-size: 0.75rem;
 }
 
-a:link {
+a:link,
+a:visited {
   text-decoration: none;
   color: inherit;
 }

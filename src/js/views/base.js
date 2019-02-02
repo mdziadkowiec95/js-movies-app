@@ -6,7 +6,8 @@ export const elements = {
   results: document.querySelector('.results'),
   resultsList: document.querySelector('.results__list'),
   preview: document.querySelector('.preview'),
-  pagination: document.querySelector('.pagination')
+  pagination: document.querySelector('.pagination'),
+  favoritesList: document.querySelector('.favorites__list')
 };
 
 const elementStrings = {
@@ -25,6 +26,31 @@ export const toggleViews = view => {
     elements.preview.classList.add('js-active');
     elements.results.classList.remove('js-active');
   }
+};
+
+// toogleSlide function --- slideDown / slideUp
+export const toggleSlide = (el, activeClass = 'active') => {
+
+  if (!el.classList.contains(activeClass)) {
+    el.classList.add(activeClass);
+    el.style.height = 'auto';
+
+    const height = el.clientHeight + 'px';
+
+    el.style.height = '0';
+
+    setTimeout(() => el.style.height = height, 0);
+
+  } else {
+    el.style.height = '0';
+
+    el.addEventListener('transitionend', () => {
+      el.classList.remove(activeClass);
+    }, {
+        once: true
+      });
+  }
+
 };
 
 export const renderLoader = parentEl => {
