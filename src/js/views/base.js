@@ -10,6 +10,10 @@ export const elements = {
   favoritesList: document.querySelector('.favorites__list')
 };
 
+export const paths = {
+  noImg: 'img/no-image.png'
+};
+
 const elementStrings = {
   loader: 'loader'
 };

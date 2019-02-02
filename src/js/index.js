@@ -114,7 +114,7 @@ const controlMovie = async () => {
 
       clearLoader(elements.preview);
 
-      movieView.renderMovie(state.movie);
+      movieView.renderMovie(state.movie, state.favorites.isFav(id));
       searchView.makeMovieSelected(id);
     } catch (error) {
       console.log(`${error}`);
@@ -163,3 +163,9 @@ elements.preview.addEventListener('click', e => {
 });
 
 document.querySelector('.favorites__btn').addEventListener('click', favoritesView.toggleFavList);
+
+window.addEventListener('load', () => {
+
+  state.favorites = new Favorites();
+
+});

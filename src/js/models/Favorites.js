@@ -11,7 +11,7 @@ export default class Favorites {
   }
 
   removeItem(id) {
-    debugger;
+    // debugger;
     const elIndex = this.movies.findIndex(el => el.id === id)
     this.movies.splice(elIndex, 1);
   }

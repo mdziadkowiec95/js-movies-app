@@ -1,4 +1,4 @@
-import { elements } from './base';
+import { elements, paths } from './base';
 
 export const getInput = () => {
   return {
@@ -32,15 +32,15 @@ const renderItem = movie => {
       <a href="#${movie.imdbID}" class="results__link">
         <div class="results__image-box">
           <img src="${
-            movie.Poster !== 'N/A' ? movie.Poster : 'img/no-image.png'
-          }" alt="${movie.Title} ${movie.Type}">
+    movie.Poster !== 'N/A' ? movie.Poster : paths.noImg
+    }" alt="${movie.Title} ${movie.Type}">
         </div>
         <div class="results__info">
           <h3 class="results__title">${movie.Title}</h3>
           <p class="results__type">Type: ${movie.Type}</p>
           <p class="results__year">Release date: <strong>${
-            movie.Year
-          }</strong></p>
+    movie.Year
+    }</strong></p>
         </div>
       </a>
     </li>
@@ -51,7 +51,7 @@ const renderItem = movie => {
 const makeButton = (type, state) => `
       <button class="pagination__btn pagination__btn--${type} btn btn--primary${
   state === 'disabled' ? ' disabled' : ''
-}">${type === 'prev' ? '&larr;' : '&rarr;'}</button>
+  }">${type === 'prev' ? '&larr;' : '&rarr;'}</button>
   `;
 
 const clearPagination = () => {

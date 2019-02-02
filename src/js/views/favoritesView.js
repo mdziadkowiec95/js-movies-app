@@ -1,4 +1,4 @@
-import { elements, toggleSlide } from './base';
+import { elements, paths, toggleSlide } from './base';
 
 
 
@@ -16,7 +16,7 @@ export const addItem = movie => {
         <li class="favorites__list-item">
           <a class="favorites__link" href="#${movie.id}">
             <div class="favorites__image-box">
-              <img class="favorites__image" src="${movie.poster}"
+              <img class="favorites__image" src="${movie.poster !== 'N/A' ? movie.poster : paths.noImg}"
                 alt="${movie.title}">
             </div>
             <h3 class="favorites__title">${movie.title}</h3>
