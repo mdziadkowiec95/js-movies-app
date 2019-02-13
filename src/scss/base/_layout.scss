@@ -23,7 +23,7 @@
 
   overflow-x: hidden;
 
-  @include make-breakpoint(lg) {
+  @include make-breakpoint(md) {
     display: flex;
     overflow-y: hidden;
   }

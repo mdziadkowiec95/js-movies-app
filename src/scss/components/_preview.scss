@@ -10,7 +10,7 @@
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
 
-  @include make-breakpoint(lg) {
+  @include make-breakpoint(md) {
     overflow-y: scroll;
     position: static;
     transform: none;
@@ -21,7 +21,7 @@
   &.js-active {
     transform: translateX(0);
 
-    @include make-breakpoint(lg) {
+    @include make-breakpoint(md) {
       // position: static;
       // transform: none;
       // width: auto;

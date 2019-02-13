@@ -10,7 +10,7 @@
 
 // Module imports below
 import './experiments';
-import { elements, toggleViews, renderLoader, clearLoader } from './views/base';
+import { elements, toggleViews, toggleSidebar, renderLoader, clearLoader } from './views/base';
 import Search from './models/Search';
 import Movie from './models/Movie';
 import Favorites from './models/Favorites';
@@ -162,7 +162,18 @@ elements.preview.addEventListener('click', e => {
   }
 });
 
-document.querySelector('.favorites__btn').addEventListener('click', favoritesView.toggleFavList);
+elements.sidebar.addEventListener('click', e => {
+
+  if (e.target.matches('.favorites__btn, .favorites__btn *')) {
+    favoritesView.toggleFavList();
+  } else if (e.target.matches('.sidebar__toggle-btn')) {
+    toggleSidebar();
+  }
+
+
+});
+
+// document.querySelector('.favorites__btn').addEventListener('click', favoritesView.toggleFavList);
 
 window.addEventListener('load', () => {
 

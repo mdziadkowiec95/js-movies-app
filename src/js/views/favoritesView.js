@@ -1,6 +1,13 @@
 import { elements, paths, toggleSlide } from './base';
 
+// This fixes toggleSlide height bug after adding new item to Favorite list
+const fixSlideBug = () => {
+  elements.favoritesList.style.height = 'auto';
 
+  const height = elements.favoritesList.clientHeight + 'px';
+
+  setTimeout(() => elements.favoritesList.style.height = height, 0);
+};
 
 export const toggleFavBtn = (isFav) => {
   const btn = document.querySelector('.preview__btn--like');
@@ -25,6 +32,8 @@ export const addItem = movie => {
   `;
 
   elements.favoritesList.insertAdjacentHTML('beforeend', markup);
+
+  fixSlideBug();
 };
 
 export const removeItem = id => {

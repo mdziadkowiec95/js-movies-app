@@ -7,7 +7,8 @@ export const elements = {
   resultsList: document.querySelector('.results__list'),
   preview: document.querySelector('.preview'),
   pagination: document.querySelector('.pagination'),
-  favoritesList: document.querySelector('.favorites__list')
+  favoritesList: document.querySelector('.favorites__list'),
+  sidebar: document.querySelector('.sidebar')
 };
 
 export const paths = {
@@ -32,7 +33,10 @@ export const toggleViews = view => {
   }
 };
 
-// toogleSlide function --- slideDown / slideUp
+export const toggleSidebar = () => {
+  elements.sidebar.classList.toggle('js-active');
+};
+
 export const toggleSlide = (el, activeClass = 'active') => {
 
   if (!el.classList.contains(activeClass)) {

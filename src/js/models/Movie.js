@@ -30,4 +30,8 @@ export default class Movie {
       awards: res.data.Awards
     };
   }
+
+  isFav() {
+    
+  }
 }
