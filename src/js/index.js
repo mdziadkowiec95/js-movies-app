@@ -162,7 +162,7 @@ const controlFavorites = () => {
 elements.preview.addEventListener('click', e => {
   if (e.target.matches('.preview__btn--back')) {
     toggleViews('search');
-  } else if (e.target.matches('.preview__btn--like')) {
+  } else if (e.target.matches('.preview__btn--like, .preview__btn--like *')) {
     controlFavorites();
   }
 });
@@ -171,7 +171,7 @@ elements.sidebar.addEventListener('click', e => {
 
   if (e.target.matches('.favorites__btn, .favorites__btn *')) {
     favoritesView.toggleFavList();
-  } else if (e.target.matches('.sidebar__toggle-btn')) {
+  } else if (e.target.matches('.sidebar__toggle-btn, .sidebar__toggle-btn *')) {
     toggleSidebar();
   }
 

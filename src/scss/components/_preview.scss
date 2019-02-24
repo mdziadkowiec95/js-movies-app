@@ -100,7 +100,7 @@
     max-width: 150px;
 
     &--back {
-      @include make-breakpoint(lg) {
+      @include make-breakpoint(md) {
         display: none;
       }
     }

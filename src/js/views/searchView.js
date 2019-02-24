@@ -51,7 +51,7 @@ const renderItem = movie => {
 const makeButton = (type, state) => `
       <button class="pagination__btn pagination__btn--${type} btn btn--primary${
   state === 'disabled' ? ' disabled' : ''
-  }">${type === 'prev' ? '&larr;' : '&rarr;'}</button>
+  }">${type === 'prev' ? '<i class="fas fa-arrow-left"></i>' : '<i class="fas fa-arrow-right"></i>'}</button>
   `;
 
 const clearPagination = () => {

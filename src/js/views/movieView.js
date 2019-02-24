@@ -24,7 +24,7 @@ export const renderMovie = (movieData, isFav) => {
   <button class="preview__btn preview__btn--back btn btn--primary">Back to Search Results</button>
   <div class="preview__top"> 
   <div class="preview__poster">
-      <button class="preview__btn preview__btn--like btn btn--primary ${isFav ? 'active' : ''}">&#x2764;
+      <button class="preview__btn preview__btn--like btn btn--primary ${isFav ? 'active' : ''}"><i class="fas fa-heart"></i>
       </button>
     <img src="${movieData.poster !== 'N/A' ? movieData.poster : paths.noImg}" alt="${
     movieData.title
@@ -35,11 +35,11 @@ export const renderMovie = (movieData, isFav) => {
     movieData.year
     })</span></h2>
     <div class="preview__rating">
-        <span class="preview__rating-star">&#x2605;</span>
+        <span class="preview__rating-star"><i class="fas fa-star"></i></span>
         <span class="preview__rating-rate">${movieData.rating}</span>
         <span class="preview__rating-votes">(${movieData.votes} votes)</span>
       </div>
-    <p class="preview__runtime">${movieData.runtime}</p>
+    <p class="preview__runtime"><i class="far fa-clock"></i> ${movieData.runtime}</p>
    
     <a href="${
     movieData.website !== 'N/A' && typeof movieData.website !== 'undefined'

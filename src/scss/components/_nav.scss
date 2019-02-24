@@ -1,4 +1,13 @@
 .nav {
   padding: 1rem;
   background-color: map-get($colors, dark--lighten);
+
+  // &__wrapper {
+  //   display: flex;
+  //   justify-content: center;
+  // }
+
+  &__search {
+    margin-right: auto;
+  }
 }

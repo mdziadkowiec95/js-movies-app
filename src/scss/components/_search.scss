@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   margin: 0;
+  margin-right: auto;
 
   @include make-breakpoint(xs) {
 
@@ -28,7 +29,7 @@
     border-radius: 1.5em;
     color: map-get($colors, light);
     font-weight: 300;
-    font-size: 0.7em;
+    font-size: 0.8em;
     transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
     &--years {
@@ -52,5 +53,9 @@
 
   &__button {
     font-size: 0.6em;
+  }
+
+  &__button-icon {
+    margin-left: .5em;
   }
 }
