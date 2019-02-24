@@ -37,7 +37,12 @@
 
   &__poster {
     position: relative;
-    width: 230px;
+    max-width: 90px;
+
+    @include make-breakpoint(sm) {
+      max-width: 230px;
+    }
+    
     // box-shadow: 0 0 5px lighten(map-get($colors, dark), 40%);
   }
 

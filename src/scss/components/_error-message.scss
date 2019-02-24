@@ -1,0 +1,10 @@
+.error-message {
+  display: block;
+  margin: 3rem auto 0 auto;
+  width: 70%;
+  padding: 1rem;
+  background-color: map-get($colors, dark--lighten);
+  border-radius: .8rem;
+  color: map-get($colors, light);
+  animation: fadeIn .5s ease;
+}

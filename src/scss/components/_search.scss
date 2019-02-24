@@ -1,33 +1,56 @@
 .search {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin: 0;
 
+  @include make-breakpoint(xs) {
+
+    flex-direction: row;
+  }
+
   &__field-group {
-    margin: 0 0.3em;
+    margin-bottom: .5em;
+    
+    @include make-breakpoint(xs) {
+      margin: 0 .3em;
+    }
   }
   // &__years-field {
   //   height: 48px;
   // }
 
   &__text-field {
+    width: 100%;
     padding: 0.8em;
-    border: 2px solid map-get($colors, dark);
+    border: 1px solid darken(map-get($colors, light), 20%);
+    background-color: transparent;
+    border-radius: 1.5em;
+    color: map-get($colors, light);
     font-weight: 300;
-    font-size: 0.85em;
+    font-size: 0.7em;
     transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
     &--years {
     }
 
+    &::placeholder {
+      color: darken(map-get($colors, light), 20%);
+
+      transition: color .2s ease-in-out;
+    }
+
     &:focus {
       outline: 0;
-      border-color: map-get($colors, primary);
-      // transform: scale(1.01);
+      border-color: map-get($colors, light);
+      
+      &::placeholder {
+        color: map-get($colors, light);
+      }
     }
   }
 
   &__button {
-    font-size: 0.9em;
+    font-size: 0.6em;
   }
 }

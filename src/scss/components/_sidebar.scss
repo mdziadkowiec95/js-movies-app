@@ -2,9 +2,10 @@
   // display: none;
   // background-color: #aaa;
   position: fixed;
-  right: -290px;
+  top: 0;
+  right: -280px;
 
-  width: 290px;
+  width: 280px;
   height: 100%;
   background-color: #fff;
   box-shadow: 0 0 5px #ccc;
@@ -37,12 +38,12 @@
     // display: inline;
     position: absolute;
     top: 50%;
-    left: -55px;
-    width: 50px;
+    left: -35px;
+    width: 35px;
     height: 50px;
-    font-size: 1.2rem;
+    font-size: 1em;
     background-color: map-get($colors, primary);
-    color: map-get($colors, dark);
+    color: map-get($colors, light);
     border: 2px solid map-get($colors, primary);
     border-radius: 20px 0 0 20px;
     outline: 0;

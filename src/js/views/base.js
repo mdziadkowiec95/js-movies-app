@@ -16,7 +16,8 @@ export const paths = {
 };
 
 const elementStrings = {
-  loader: 'loader'
+  loader: 'loader',
+  errorModal: 'modal-error',
 };
 
 export const toggleViews = view => {
@@ -78,3 +79,22 @@ export const clearLoader = parentEl => {
   const loader = document.querySelector(`.${elementStrings.loader}`);
   if (loader) parentEl.removeChild(loader);
 };
+
+
+export const hideModal = () => {
+  elements.preview.removeChild(document.querySelector(`.${elementStrings.errorModal}`));
+};
+
+export const renderErrorMsg = (parent, queryType, query) => {
+  const markup = `
+        <div class="error-message">
+          <p class="error-message__info">I'm sorry. Your query doesn't match any movie I know about :-( <br><br>You need to be more precise.
+          <br><br>Your query:<br> ${queryType === 'search' ?
+      `<br>Title: ${query.title}<br>Year: ${query.year}` : query}
+          </p>
+        </div> 
+    `;
+
+  parent.insertAdjacentHTML('beforeend', markup);
+};
+

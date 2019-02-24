@@ -13,6 +13,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   background: url('../img/main-bg.jpeg') no-repeat center;
+  // background-color: map-get($colors, dark--lighten);
 }
 
 img {

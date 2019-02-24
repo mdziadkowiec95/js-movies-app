@@ -1,4 +1,4 @@
 .nav {
   padding: 1rem;
-  background-color: map-get($colors, dark);
+  background-color: map-get($colors, dark--lighten);
 }

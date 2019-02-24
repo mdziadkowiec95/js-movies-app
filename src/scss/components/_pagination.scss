@@ -11,7 +11,7 @@
 
   background-color: rgba(map-get($colors, dark), 0);
 
-  box-shadow: 0 -2px 5px lighten(map-get($colors, dark), 40%);
+  // box-shadow: 0 -2px 5px lighten(map-get($colors, dark), 40%);
 
   z-index: 1000;
 
@@ -36,14 +36,14 @@
 
   &__pages {
     position: absolute;
-    top: -32px;
+    top: -25px;
     // flex: 1 1 30%;
     padding: 0.4em 0.5em;
     background-color: rgba(map-get($colors, dark), 1);
     color: map-get($colors, light);
     box-shadow: 0 0px 2px lighten(map-get($colors, dark), 40%);
-    // border-radius: 1em;
-    font-size: 0.8rem;
+    border-radius: 0 1em 1em 0;
+    font-size: 0.6em;
   }
 }
 

@@ -10,7 +10,7 @@
 
 // Module imports below
 import './experiments';
-import { elements, toggleViews, toggleSidebar, renderLoader, clearLoader } from './views/base';
+import { elements, toggleViews, toggleSidebar, renderLoader, clearLoader, renderErrorMsg } from './views/base';
 import Search from './models/Search';
 import Movie from './models/Movie';
 import Favorites from './models/Favorites';
@@ -51,6 +51,7 @@ const controlSearch = async (page = 1, mode = 'search') => {
     console.log('ok');
     state.search = new Search(query);
 
+
     searchView.clearInputs();
     searchView.clearResults();
     toggleViews('search');
@@ -67,7 +68,10 @@ const controlSearch = async (page = 1, mode = 'search') => {
         state.search.total
       );
     } catch (error) {
-      alert(`There was a problem with searching movies ---> ${error}`);
+      // alert(`There was a problem with searching movies ---> ${error}`);
+      state.modal = true;
+      searchView.clearResults();
+      renderErrorMsg(elements.resultsList, 'search', query);
       clearLoader(elements.results);
     }
   } else {
@@ -117,7 +121,8 @@ const controlMovie = async () => {
       movieView.renderMovie(state.movie, state.favorites.isFav(id));
       searchView.makeMovieSelected(id);
     } catch (error) {
-      console.log(`${error}`);
+      movieView.clearMovie();
+      renderErrorMsg(elements.preview, 'preview', id);
     }
   }
 };

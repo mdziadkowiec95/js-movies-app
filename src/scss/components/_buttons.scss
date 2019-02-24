@@ -2,12 +2,16 @@
   outline: 0;
   background-color: map-get($colors, primary);
   border: 2px solid;
+  border-radius: 1.5em;
   padding: 0.4rem 0.7rem;
+  font-weight: 700;
+  font-size: .8em;
+  text-transform: uppercase;
   text-align: center;
   cursor: pointer;
 
   &--primary {
-    box-shadow: 0 0 5px lighten(map-get($colors, dark), 40%);
+    box-shadow: 0 0 2px lighten(map-get($colors, dark), 40%);
     border-color: map-get($colors, primary);
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 

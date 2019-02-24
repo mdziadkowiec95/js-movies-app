@@ -4,7 +4,20 @@
   }
 
   &__btn {
+    position: relative;
     width: 100%;
+    border-radius: 0 0 .8em .8em;
+
+    &::after {
+      content: '\25BE';
+      display: block;
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: map-get($colors, dark);
+      font-size: 2em;
+    }
 
     span {
       display: block;
