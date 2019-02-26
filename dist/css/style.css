@@ -471,7 +471,7 @@ a:visited {
   outline: 0;
   background-color: #E9B342;
   border: 2px solid;
-  border-radius: 1.5em;
+  border-radius: 2rem;
   padding: 0.4rem 0.7rem;
   font-weight: 700;
   font-size: .8em;
@@ -527,6 +527,8 @@ a:visited {
 .nav {
   padding: 1rem;
   background-color: #313131; }
+  .nav__search {
+    margin-right: auto; }
 
 .pagination {
   display: flex;
@@ -575,7 +577,8 @@ a:visited {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0; }
+  margin: 0;
+  margin-right: auto; }
   @media (min-width: 480px) {
     .search {
       flex-direction: row; } }
@@ -592,7 +595,7 @@ a:visited {
     border-radius: 1.5em;
     color: #ffffff;
     font-weight: 300;
-    font-size: 0.7em;
+    font-size: 0.8em;
     transition: transform 0.2s ease-in-out, border-color 0.2s ease-in-out; }
     .search__text-field::placeholder {
       color: #cccccc;
@@ -604,6 +607,8 @@ a:visited {
         color: #ffffff; }
   .search__button {
     font-size: 0.6em; }
+  .search__button-icon {
+    margin-left: .5em; }
 
 .results {
   border-right: 1px solid #eee;
@@ -715,7 +720,7 @@ a:visited {
     display: block;
     margin: 0 auto;
     max-width: 150px; }
-    @media (min-width: 1440px) {
+    @media (min-width: 992px) {
       .preview__btn--back {
         display: none; } }
     .preview__btn--like {

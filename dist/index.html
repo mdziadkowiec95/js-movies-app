@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Movies JS App</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
 <link href="css/style.css" rel="stylesheet"></head>
 
 <body>
   <header class="header">
     <nav class="nav">
-      <div class="container">
-        <i class="fas fa-film"></i>
-
+      <div class="nav__wrapper container">
         <form class="search">
           <div class="search__field-group">
             <input type="number" placeholder="Enter specific year..." class="search__text-field search__text-field--years">
@@ -20,7 +20,7 @@
           <div class="search__field-group">
             <input type="text" placeholder="Search by title..." class="search__text-field search__text-field--title">
           </div>
-          <button type="submit" class="search__button btn btn--primary">Search</button>
+          <button type="submit" class="search__button btn btn--primary">Search<i class="search__button-icon fas fa-search"></i></button>
         </form>
       </div>
     </nav>
@@ -205,13 +205,11 @@
                 </li> -->
               </ul>
             </div>
-            <button class="sidebar__toggle-btn">&#x25C0;</button>
+            <button class="sidebar__toggle-btn"><i class="fas fa-arrow-left"></i></button>
           </div>
         </div>
         <div class="pagination">
-          <button class="pagination__btn pagination__btn--prev  btn btn--primary disabled">&larr;</button>
-          <button class="pagination__btn pagination__btn--next btn btn--primary">&rarr;</button>
-          <span class="pagination__pages">1 / 345</span>
+          <!-- render pagination here -->
         </div>
 
       </div>

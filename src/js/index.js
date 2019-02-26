@@ -22,18 +22,18 @@ const styles = require('../scss/app.scss');
 
 
 
-// Application controller below
+// Application state object
 
 const state = {};
 
-window.state = state;
-
 /**
- * Search
+ * Search 
  * Movie
- *
+ * Favorites
  *
  */
+
+window.state = state;
 
 const controlSearch = async (page = 1, mode = 'search') => {
   let query;
@@ -117,10 +117,12 @@ const controlMovie = async () => {
       console.log(state.movie);
 
       clearLoader(elements.preview);
-
+      console.log(state);
       movieView.renderMovie(state.movie, state.favorites.isFav(id));
-      searchView.makeMovieSelected(id);
+
+      if (state.search) searchView.makeMovieSelected(id);
     } catch (error) {
+      console.log(error);
       movieView.clearMovie();
       renderErrorMsg(elements.preview, 'preview', id);
     }
@@ -128,7 +130,7 @@ const controlMovie = async () => {
 };
 
 // Set event listeners for handling controling single movie preview
-['hashchange'].forEach(event => window.addEventListener(event, controlMovie));
+['load', 'hashchange'].forEach(event => window.addEventListener(event, controlMovie));
 
 
 const controlFavorites = () => {
@@ -146,16 +148,12 @@ const controlFavorites = () => {
     favoritesView.addItem(newItem);
 
   } else {
-    // debugger;
     state.favorites.removeItem(curID);
 
     favoritesView.toggleFavBtn(state.favorites.isFav(curID));
 
     favoritesView.removeItem(curID);
   }
-
-  console.log(state.favorites);
-
 
 };
 
@@ -175,13 +173,15 @@ elements.sidebar.addEventListener('click', e => {
     toggleSidebar();
   }
 
-
 });
 
-// document.querySelector('.favorites__btn').addEventListener('click', favoritesView.toggleFavList);
 
 window.addEventListener('load', () => {
 
   state.favorites = new Favorites();
+
+  state.favorites.readData();
+
+  state.favorites.movies.forEach(el => favoritesView.addItem(el));
 
 });
