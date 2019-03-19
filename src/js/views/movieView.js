@@ -45,7 +45,7 @@ export const renderMovie = (movieData, isFav) => {
     movieData.website !== 'N/A' && typeof movieData.website !== 'undefined'
       ? movieData.website
       : 'https://www.google.com/search?q=' + movieData.title
-    }" class="preview__btn preview__btn--visit btn btn--primary">${
+    }" class="preview__btn preview__btn--visit btn btn--primary" target="_blank">${
     movieData.website !== 'N/A' && typeof movieData.website !== 'undefined'
       ? 'Visit website'
       : 'Read more'

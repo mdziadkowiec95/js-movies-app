@@ -20,6 +20,10 @@ const elementStrings = {
   errorModal: 'modal-error',
 };
 
+export const scrollToTop = () => {
+  elements.preview.scrollIntoView({ behavior: 'smooth' });
+};
+
 export const toggleViews = view => {
   if (view === 'search') {
     elements.mainWrapper.classList.remove('preview-mode');

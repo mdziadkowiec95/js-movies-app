@@ -8,7 +8,7 @@ export default class Movie {
 
   async getMovie() {
     const res = await axios(
-      `http://www.omdbapi.com/?apikey=${APIkey}&i=${this.id}`
+      `https://www.omdbapi.com/?apikey=${APIkey}&i=${this.id}`
     );
 
     this.title = res.data.Title;
@@ -32,6 +32,6 @@ export default class Movie {
   }
 
   isFav() {
-    
+
   }
 }

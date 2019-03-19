@@ -12,7 +12,7 @@ export default class Search {
       : `s=${this.query.title}`;
 
     const results = await axios(
-      `http://www.omdbapi.com/?apikey=${APIkey}&${request}&page=${page}`
+      `https://www.omdbapi.com/?apikey=${APIkey}&${request}&page=${page}`
     );
     this.result = results.data.Search;
     this.total = results.data.totalResults;

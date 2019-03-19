@@ -1,16 +1,4 @@
-// import { library, dom } from '@fortawesome/fontawesome-svg-core';
-// import { faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
-
-// // We are only using the user-astronaut icon
-// library.add(faUserAstronaut);
-
-// // Replace any existing <i> tags with <svg> and set up a MutationObserver to
-// // continue doing this as the DOM changes.
-// dom.watch();
-
-// Module imports below
-import './experiments';
-import { elements, toggleViews, toggleSidebar, renderLoader, clearLoader, renderErrorMsg } from './views/base';
+import { elements, toggleViews, toggleSidebar, renderLoader, clearLoader, renderErrorMsg, scrollToTop } from './views/base';
 import Search from './models/Search';
 import Movie from './models/Movie';
 import Favorites from './models/Favorites';
@@ -19,8 +7,6 @@ import * as movieView from './views/movieView';
 import * as favoritesView from './views/favoritesView';
 
 const styles = require('../scss/app.scss');
-
-
 
 // Application state object
 
@@ -40,17 +26,14 @@ const controlSearch = async (page = 1, mode = 'search') => {
   // debugger;
 
   if (mode === 'search') {
-    query = searchView.getInput();
+    query = searchView.getInput(); // new query
   } else if (mode === 'paginator') {
-    query = state.search.query;
+    query = state.search.query; // next/prev page query
   }
 
-  // debugger;
-
   if (query.title !== '') {
-    console.log('ok');
-    state.search = new Search(query);
 
+    state.search = new Search(query);
 
     searchView.clearInputs();
     searchView.clearResults();
@@ -107,6 +90,7 @@ const controlMovie = async () => {
 
     // prepare UI
     toggleViews('preview');
+    scrollToTop();
     movieView.clearMovie();
     renderLoader(elements.preview);
 
