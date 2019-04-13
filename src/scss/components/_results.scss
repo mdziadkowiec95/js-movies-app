@@ -63,7 +63,7 @@
     }
 
     &.active {
-      @include make-breakpoint(lg) {
+      @include make-breakpoint(md) {
         animation: pop-in .3s ease;
         background-color: lighten(map-get($colors, primary), 25%);
         box-shadow: 0 0 10px lighten(map-get($colors, dark), 40%);

@@ -21,15 +21,23 @@ export const clearResults = () => {
 };
 
 export const makeMovieSelected = id => {
-  // debugger;
-  Array.from(document.querySelectorAll('.results__link')).forEach(el => el.classList.remove('active'));
-  document.querySelector(`.results__link[href="#${id}"]`).classList.add('active');
+  const resultLinks = Array.from(document.querySelectorAll('.results__link'));
+
+  if (resultLinks.length > 0) {
+    resultLinks.forEach(el => {
+      if (el.dataset.id === id) {
+        el.classList.add('active');
+      } else {
+        el.classList.remove('active');
+      }
+    });
+  }
 };
 
 const renderItem = movie => {
   const markup = `
     <li class="results__item">
-      <a href="#${movie.imdbID}" class="results__link">
+      <a href="#${movie.imdbID}" class="results__link" data-id="${movie.imdbID}">
         <div class="results__image-box">
           <img src="${
     movie.Poster !== 'N/A' ? movie.Poster : paths.noImg
@@ -59,10 +67,7 @@ const clearPagination = () => {
 };
 
 const renderPagination = (page, total) => {
-  // debugger;
   const pages = Math.ceil(parseFloat(total) / 10); // available pages for current search
-
-  // console.log(pages);
 
   let button;
 
